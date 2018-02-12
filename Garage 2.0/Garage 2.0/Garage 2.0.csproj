@@ -158,6 +158,22 @@
     <Compile Include="Migrations\201802091405329_Initial.Designer.cs">
       <DependentUpon>201802091405329_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802121028420_New type for Vehicle.cs" />
+    <Compile Include="Migrations\201802121028420_New type for Vehicle.Designer.cs">
+      <DependentUpon>201802121028420_New type for Vehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802121147505_Change to v.RegNo.cs" />
+    <Compile Include="Migrations\201802121147505_Change to v.RegNo.Designer.cs">
+      <DependentUpon>201802121147505_Change to v.RegNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802121150427_Change to v.RegNo, attempt2.cs" />
+    <Compile Include="Migrations\201802121150427_Change to v.RegNo, attempt2.Designer.cs">
+      <DependentUpon>201802121150427_Change to v.RegNo, attempt2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802121221298_NotNullRegNo.cs" />
+    <Compile Include="Migrations\201802121221298_NotNullRegNo.Designer.cs">
+      <DependentUpon>201802121221298_NotNullRegNo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ParkedVehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -224,6 +240,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201802091405329_Initial.resx">
       <DependentUpon>201802091405329_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802121028420_New type for Vehicle.resx">
+      <DependentUpon>201802121028420_New type for Vehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802121147505_Change to v.RegNo.resx">
+      <DependentUpon>201802121147505_Change to v.RegNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802121150427_Change to v.RegNo, attempt2.resx">
+      <DependentUpon>201802121150427_Change to v.RegNo, attempt2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802121221298_NotNullRegNo.resx">
+      <DependentUpon>201802121221298_NotNullRegNo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
