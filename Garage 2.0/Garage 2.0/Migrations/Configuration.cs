@@ -16,17 +16,17 @@ namespace Garage_2._0.Migrations
         {
 
             context.ParkedVehicles.AddOrUpdate(
-                v => v.Id,
+                v => v.RegNo,
 
-                new Models.ParkedVehicle { RegNo = "ABC123", Type = 1, Color = "Red", Brand = "BMW", Model = "MC", NoOfWheels = 2 },
-                new Models.ParkedVehicle { RegNo = "ABC234", Type = 1, Color = "Black", Brand = "Opel", Model = "MPV", NoOfWheels = 4 },
-                new Models.ParkedVehicle { RegNo = "ABC345", Type = 2, Color = "White", Brand = "Fiat", Model = "Jeep", NoOfWheels = 4 },
-                new Models.ParkedVehicle { RegNo = "ABC456", Type = 3, Color = "Green", Brand = "Citroen", Model = "Buss", NoOfWheels = 8 }
+                new Models.ParkedVehicle { RegNo = "ABC123", Type = Models.VehicleType.Combi, Color = "Red", Brand = "BMW", Model = "MC", NoOfWheels = 2 },
+                new Models.ParkedVehicle { RegNo = "ABC234", Type = Models.VehicleType.Sedan, Color = "Black", Brand = "Opel", Model = "MPV", NoOfWheels = 4 },
+                new Models.ParkedVehicle { RegNo = "ABC345", Type = Models.VehicleType.SUV, Color = "White", Brand = "Fiat", Model = "Jeep", NoOfWheels = 4 },
+                new Models.ParkedVehicle { RegNo = "ABC456", Type = Models.VehicleType.Vespa, Color = "Green", Brand = "Citroen", Model = "Buss", NoOfWheels = 8 }
 
                 );
 
 
-            
+            context.SaveChanges();
             
             //  This method will be called after migrating to the latest version.
 
