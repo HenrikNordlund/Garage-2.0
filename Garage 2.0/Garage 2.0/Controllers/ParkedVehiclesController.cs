@@ -21,6 +21,21 @@ namespace Garage_2._0.Controllers
             return View(db.ParkedVehicles.ToList());
         }
 
+        public ActionResult About()
+        {
+            ViewBag.Message = "A little bit about us.";
+
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Contactinformation.";
+
+            return View();
+        }
+
+
         // GET: ParkedVehicles/Details/5
         public ActionResult Details(int? id)
         {
