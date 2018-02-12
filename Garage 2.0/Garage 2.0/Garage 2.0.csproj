@@ -173,6 +173,14 @@
     <Compile Include="Migrations\201802121221298_NotNullRegNo.Designer.cs">
       <DependentUpon>201802121221298_NotNullRegNo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802121340535_input-controll.cs" />
+    <Compile Include="Migrations\201802121340535_input-controll.Designer.cs">
+      <DependentUpon>201802121340535_input-controll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802121353463_input-controll2.cs" />
+    <Compile Include="Migrations\201802121353463_input-controll2.Designer.cs">
+      <DependentUpon>201802121353463_input-controll2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ParkedVehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -252,6 +260,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802121221298_NotNullRegNo.resx">
       <DependentUpon>201802121221298_NotNullRegNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802121340535_input-controll.resx">
+      <DependentUpon>201802121340535_input-controll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802121353463_input-controll2.resx">
+      <DependentUpon>201802121353463_input-controll2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
