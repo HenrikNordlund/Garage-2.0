@@ -18,7 +18,7 @@ namespace Garage_2._0.Controllers
         // GET: ParkedVehicles
         public ActionResult Index()
         {
-            return View(db.ParkedVehicles.ToList());
+            return View("OversightView", db.ParkedVehicles.ToList());
         }
 
         // GET: ParkedVehicles/Details/5
