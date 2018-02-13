@@ -16,10 +16,26 @@ namespace Garage_2._0.Controllers
         private RegisterContext db = new RegisterContext();
 
         // GET: ParkedVehicles
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    return View(db.ParkedVehicles.ToList());
+        //}
+
+
+
+
+        public ActionResult Index(string searchTerm = null)
         {
-            return View(db.ParkedVehicles.ToList());
+            var model = db.ParkedVehicles
+                .Where(r => searchTerm == null || r.RegNo.Contains(searchTerm))
+                .OrderBy(r => r.RegNo);
+
+            return View(model);
         }
+
+
+
+
 
         public ActionResult About()
         {
