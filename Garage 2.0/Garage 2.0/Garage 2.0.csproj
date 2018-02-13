@@ -201,6 +201,10 @@
     <Compile Include="Migrations\201802131310249_fixade avrundningen double.Designer.cs">
       <DependentUpon>201802131310249_fixade avrundningen double.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802131414056_Åkes tillägg.cs" />
+    <Compile Include="Migrations\201802131414056_Åkes tillägg.Designer.cs">
+      <DependentUpon>201802131414056_Åkes tillägg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ParkedVehicle.cs" />
     <Compile Include="Models\ReceiptViewModel.cs" />
@@ -306,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802131310249_fixade avrundningen double.resx">
       <DependentUpon>201802131310249_fixade avrundningen double.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802131414056_Åkes tillägg.resx">
+      <DependentUpon>201802131414056_Åkes tillägg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
