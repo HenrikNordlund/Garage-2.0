@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Garage_2._0.DataAccessLayer;
 using Garage_2._0.Models;
 
+
 namespace Garage_2._0.Controllers
 {
     public class ParkedVehiclesController : Controller
@@ -146,12 +147,12 @@ namespace Garage_2._0.Controllers
             
         }
 
-        private double CalculateParkingPrice(DateTime checkInTime, DateTime checkOutTime)
+        private int CalculateParkingPrice(DateTime checkInTime, DateTime checkOutTime)
         {
             TimeSpan span = (checkOutTime - checkInTime);
 
             //Priset blir 1 öre per sekund
-            var ParkingPrice = span.TotalSeconds * 0.01;
+            var ParkingPrice = Convert.ToInt32(span.TotalSeconds * 0.01);
 
             return ParkingPrice;
 
