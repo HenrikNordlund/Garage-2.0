@@ -31,7 +31,7 @@ namespace Garage_2._0.Models
         public DateTime CheckInTime { get; set; }
 
         [Display(Name = "Parkingcost: ")]
-        public double ParkingPrice { get; set; }
+        public int ParkingPrice { get; set; }
 
         //behöver man omvandla CheckOutTime respektive CheckInTime till varsin varibel som sedan kan användas för att beräkna pris?
     }
