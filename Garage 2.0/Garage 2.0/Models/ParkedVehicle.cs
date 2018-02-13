@@ -14,10 +14,12 @@ namespace Garage_2._0.Models
         public VehicleType Type { get; set; }
 
         [Required]
+        [ValidateRegNo(ErrorMessage ="Reg number already exists")]
         public string RegNo { get; set; }
         public string Color { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
         public int NoOfWheels { get; set; }
+        //public DateTime ParkingTime { get; set; }
     }
 }

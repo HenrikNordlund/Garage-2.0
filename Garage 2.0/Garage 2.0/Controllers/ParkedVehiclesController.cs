@@ -60,19 +60,23 @@ namespace Garage_2._0.Controllers
         // POST: ParkedVehicles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
+        //parkedVehicle.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Type,RegNo,Color,Brand,Model,NoOfWheels")] ParkedVehicle parkedVehicle)
         {
-            if (ModelState.IsValid)
-            {
+            parkedVehicle.RegNo = parkedVehicle.RegNo.ToUpper();
+            if (ModelState.IsValid) {   
                 db.ParkedVehicles.Add(parkedVehicle);
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 
             return View(parkedVehicle);
         }
+
 
         // GET: ParkedVehicles/Edit/5
         public ActionResult Edit(int? id)

@@ -173,8 +173,17 @@
     <Compile Include="Migrations\201802121221298_NotNullRegNo.Designer.cs">
       <DependentUpon>201802121221298_NotNullRegNo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802121408586_Add ParkingTime to ParkedVehicle.cs" />
+    <Compile Include="Migrations\201802121408586_Add ParkingTime to ParkedVehicle.Designer.cs">
+      <DependentUpon>201802121408586_Add ParkingTime to ParkedVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802121530113_REmove ParkingTime.cs" />
+    <Compile Include="Migrations\201802121530113_REmove ParkingTime.Designer.cs">
+      <DependentUpon>201802121530113_REmove ParkingTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ParkedVehicle.cs" />
+    <Compile Include="Models\ValidateRegNoAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +261,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802121221298_NotNullRegNo.resx">
       <DependentUpon>201802121221298_NotNullRegNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802121408586_Add ParkingTime to ParkedVehicle.resx">
+      <DependentUpon>201802121408586_Add ParkingTime to ParkedVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802121530113_REmove ParkingTime.resx">
+      <DependentUpon>201802121530113_REmove ParkingTime.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
