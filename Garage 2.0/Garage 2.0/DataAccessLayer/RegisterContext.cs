@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
 using System.Web;
-
+using Garage_2._0.Models;
 
 namespace Garage_2._0.DataAccessLayer
 {
@@ -13,9 +13,7 @@ namespace Garage_2._0.DataAccessLayer
            
         }
         
-        public DbSet<Models.ParkedVehicle> ParkedVehicles { get; set; }
-
-      
-    }
+        public DbSet<ParkedVehicle> ParkedVehicles { get; set; }
+     }
 
 }

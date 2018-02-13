@@ -6,9 +6,22 @@
 
 <h2>    </h2>
 
+
 <p>
-    @Html.ActionLink("Check_In_Vehicle", "Create")
+    @Html.ActionLink("Check in vehicle", "Create")
 </p>
+
+<h6>or</h6>
+<h6>Search for vehicle by Registration Number</h6>
+
+<form method="get">
+
+    <input type="search" class="form-control" name="searchTerm" />
+    <button type="submit" class="btn btn-sm">Search</button>
+   
+</form>
+
+
 <table class="table">
     <tr>
         <th>

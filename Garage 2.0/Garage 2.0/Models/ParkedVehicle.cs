@@ -16,6 +16,7 @@ namespace Garage_2._0.Models
 
         [Required]
         [Display(Name = "Registration Number")]
+        [ValidateRegNo(ErrorMessage ="Reg number already exists")]
         public string RegNo { get; set; }
         [Required]
         [StringLength(20)]
@@ -25,5 +26,6 @@ namespace Garage_2._0.Models
         [Range(1,8)]
         [Display(Name = "Number Of Wheels")]
         public int NoOfWheels { get; set; }
+        //public DateTime ParkingTime { get; set; }
     }
 }
