@@ -16,10 +16,26 @@ namespace Garage_2._0.Controllers
         private RegisterContext db = new RegisterContext();
 
         // GET: ParkedVehicles
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    return View(db.ParkedVehicles.ToList());
+        //}
+
+
+
+
+        public ActionResult Index(string searchTerm = null)
         {
-            return View(db.ParkedVehicles.ToList());
+            var model = db.ParkedVehicles
+                .Where(r => searchTerm == null || r.RegNo.Contains(searchTerm))
+                .OrderBy(r => r.RegNo);
+
+            return View(model);
         }
+
+
+
+
 
         public ActionResult About()
         {
@@ -130,9 +146,37 @@ namespace Garage_2._0.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             ParkedVehicle parkedVehicle = db.ParkedVehicles.Find(id);
+            var receiptModel = new ReceiptViewModel
+            {
+                Type = parkedVehicle.Type,
+                Color = parkedVehicle.Color,
+                Brand = parkedVehicle.Brand,
+                Model = parkedVehicle.Model,
+                RegNo = parkedVehicle.RegNo,
+                NoOfWheels = parkedVehicle.NoOfWheels,
+
+                CheckOutTime = DateTime.Now,
+                CheckInTime =  new DateTime(2018, 2, 9, 8, 30, 0)
+                
+            };
+           receiptModel.ParkingPrice = CalculateParkingPrice(receiptModel.CheckInTime, receiptModel.CheckOutTime);
             db.ParkedVehicles.Remove(parkedVehicle);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return View("Receipt", receiptModel);
+            
+        }
+
+        private double CalculateParkingPrice(DateTime checkInTime, DateTime checkOutTime)
+        {
+            TimeSpan span = (checkOutTime - checkInTime);
+
+            //Priset blir 1 öre per sekund
+            var ParkingPrice = span.TotalSeconds * 0.01;
+
+            return ParkingPrice;
+
+
+           
         }
 
         protected override void Dispose(bool disposing)
@@ -143,5 +187,8 @@ namespace Garage_2._0.Controllers
             }
             base.Dispose(disposing);
         }
+
+       
+
     }
 }

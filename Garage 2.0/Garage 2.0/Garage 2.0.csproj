@@ -181,6 +181,22 @@
     <Compile Include="Migrations\201802121530113_REmove ParkingTime.Designer.cs">
       <DependentUpon>201802121530113_REmove ParkingTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802121509228_akes inputkontroll.cs" />
+    <Compile Include="Migrations\201802121509228_akes inputkontroll.Designer.cs">
+      <DependentUpon>201802121509228_akes inputkontroll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802130916507_Ny model för kvitto.cs" />
+    <Compile Include="Migrations\201802130916507_Ny model för kvitto.Designer.cs">
+      <DependentUpon>201802130916507_Ny model för kvitto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802131054176_Dmitris fix database.cs" />
+    <Compile Include="Migrations\201802131054176_Dmitris fix database.Designer.cs">
+      <DependentUpon>201802131054176_Dmitris fix database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802131237059_det sista från Henrik.cs" />
+    <Compile Include="Migrations\201802131237059_det sista från Henrik.Designer.cs">
+      <DependentUpon>201802131237059_det sista från Henrik.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ParkedVehicle.cs" />
     <Compile Include="Models\ValidateRegNoAttribute.cs" />
@@ -209,7 +225,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -228,6 +246,7 @@
     <Content Include="Views\ParkedVehicles\Edit.cshtml" />
     <Content Include="Views\ParkedVehicles\Index.cshtml" />
     <Content Include="Views\ParkedVehicles\OversightView.cshtml" />
+    <Content Include="Views\ParkedVehicles\Receipt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -267,6 +286,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802121530113_REmove ParkingTime.resx">
       <DependentUpon>201802121530113_REmove ParkingTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802121509228_akes inputkontroll.resx">
+      <DependentUpon>201802121509228_akes inputkontroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802130916507_Ny model för kvitto.resx">
+      <DependentUpon>201802130916507_Ny model för kvitto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802131054176_Dmitris fix database.resx">
+      <DependentUpon>201802131054176_Dmitris fix database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802131237059_det sista från Henrik.resx">
+      <DependentUpon>201802131237059_det sista från Henrik.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
