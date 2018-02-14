@@ -81,9 +81,10 @@ namespace Garage_2._0.Controllers
         //parkedVehicle.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Type,RegNo,Color,Brand,Model,NoOfWheels")] ParkedVehicle parkedVehicle)
+        public ActionResult Create([Bind(Include = "Id,Type,RegNo,Color,Brand,Model,NoOfWheels,CheckInTime")] ParkedVehicle parkedVehicle)
         {
             parkedVehicle.RegNo = parkedVehicle.RegNo.ToUpper();
+            parkedVehicle.CheckInTime = DateTime.Now;
             if (ModelState.IsValid) {   
                 db.ParkedVehicles.Add(parkedVehicle);
                 db.SaveChanges();
@@ -115,7 +116,7 @@ namespace Garage_2._0.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Type,RegNo,Color,Brand,Model,NoOfWheels")] ParkedVehicle parkedVehicle)
+        public ActionResult Edit([Bind(Include = "Id,Type,RegNo,Color,Brand,Model,NoOfWheels,CheckInTime")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {
@@ -155,14 +156,16 @@ namespace Garage_2._0.Controllers
                 Model = parkedVehicle.Model,
                 RegNo = parkedVehicle.RegNo,
                 NoOfWheels = parkedVehicle.NoOfWheels,
-
                 CheckOutTime = DateTime.Now,
-                CheckInTime =  new DateTime(2018, 2, 9, 8, 30, 0)
-                
+                CheckInTime = parkedVehicle.CheckInTime
             };
-           receiptModel.ParkingPrice = CalculateParkingPrice(receiptModel.CheckInTime, receiptModel.CheckOutTime);
+
+            receiptModel.ParkingPrice = CalculateParkingPrice(receiptModel.CheckInTime, receiptModel.CheckOutTime);
+   
             db.ParkedVehicles.Remove(parkedVehicle);
             db.SaveChanges();
+
+            
             return View("Receipt", receiptModel);
             
         }
