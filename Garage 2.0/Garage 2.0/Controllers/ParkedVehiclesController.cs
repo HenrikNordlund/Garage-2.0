@@ -20,9 +20,7 @@ namespace Garage_2._0.Controllers
         //public ActionResult Index()
         //{
         //    return View(db.ParkedVehicles.ToList());
-        //}
-
-
+        //} 
 
 
         public ActionResult Index(string searchTerm = null)
@@ -33,9 +31,6 @@ namespace Garage_2._0.Controllers
 
             return View(model);
         }
-
-
-
 
 
         public ActionResult About()
