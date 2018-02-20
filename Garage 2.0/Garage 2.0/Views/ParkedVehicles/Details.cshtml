@@ -4,18 +4,26 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details Parked Vehicle</h2>
+<h2>Details</h2>
 
 <div>
-    <h4></h4>
+    <h4>ParkedVehicle</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Type)
+            @Html.DisplayNameFor(model => model.Member.MemberSignum)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Type)
+            @Html.DisplayFor(model => model.Member.MemberSignum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleType.FordonsType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleType.FordonsType)
         </dd>
 
         <dt>
@@ -56,6 +64,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.NoOfWheels)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckInTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckInTime)
         </dd>
 
     </dl>

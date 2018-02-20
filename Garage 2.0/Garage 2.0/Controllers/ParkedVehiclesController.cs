@@ -9,7 +9,6 @@ using System.Web.Mvc;
 using Garage_2._0.DataAccessLayer;
 using Garage_2._0.Models;
 
-
 namespace Garage_2._0.Controllers
 {
     public class ParkedVehiclesController : Controller
@@ -17,36 +16,15 @@ namespace Garage_2._0.Controllers
         private RegisterContext db = new RegisterContext();
 
         // GET: ParkedVehicles
-        //public ActionResult Index()
-        //{
-        //    return View(db.ParkedVehicles.ToList());
-        //} 
-
-
         public ActionResult Index(string searchTerm = null)
         {
-            var model = db.ParkedVehicles
+            var parkedVehicles = db.ParkedVehicles
                 .Where(r => searchTerm == null || r.RegNo.Contains(searchTerm))
                 .OrderBy(r => r.RegNo);
 
-            return View(model);
+           // var parkedVehicles = db.ParkedVehicles.Include(p => p.Member).Include(p => p.VehicleType);
+            return View(parkedVehicles.ToList());
         }
-
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "A little bit about us.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Contactinformation.";
-
-            return View();
-        }
-
 
         // GET: ParkedVehicles/Details/5
         public ActionResult Details(int? id)
@@ -66,30 +44,33 @@ namespace Garage_2._0.Controllers
         // GET: ParkedVehicles/Create
         public ActionResult Create()
         {
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "MemberSignum");
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "FordonsType");
             return View();
         }
 
         // POST: ParkedVehicles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-
-        //parkedVehicle.
         [HttpPost]
+
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Type,RegNo,Color,Brand,Model,NoOfWheels,CheckInTime")] ParkedVehicle parkedVehicle)
+        public ActionResult Create([Bind(Include = "Id,RegNo,Color,Brand,Model,NoOfWheels,CheckInTime,MemberId,VehicleTypeId")] ParkedVehicle parkedVehicle)
         {
             parkedVehicle.RegNo = parkedVehicle.RegNo.ToUpper();
             parkedVehicle.CheckInTime = DateTime.Now;
-            if (ModelState.IsValid) {   
+
+            if (ModelState.IsValid)
+            {
                 db.ParkedVehicles.Add(parkedVehicle);
                 db.SaveChanges();
-
                 return RedirectToAction("Index");
             }
 
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "MemberSignum", parkedVehicle.MemberId);
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "FordonsType", parkedVehicle.VehicleTypeId);
             return View(parkedVehicle);
         }
-
 
         // GET: ParkedVehicles/Edit/5
         public ActionResult Edit(int? id)
@@ -103,15 +84,17 @@ namespace Garage_2._0.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "MemberSignum", parkedVehicle.MemberId);
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "FordonsType", parkedVehicle.VehicleTypeId);
             return View(parkedVehicle);
         }
 
         // POST: ParkedVehicles/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        //[HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Type,RegNo,Color,Brand,Model,NoOfWheels,CheckInTime")] ParkedVehicle parkedVehicle)
+        public ActionResult Edit([Bind(Include = "Id,RegNo,Color,Brand,Model,NoOfWheels,CheckInTime,MemberId,VehicleTypeId")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {
@@ -119,6 +102,8 @@ namespace Garage_2._0.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "MemberSignum", parkedVehicle.MemberId);
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "FordonsType", parkedVehicle.VehicleTypeId);
             return View(parkedVehicle);
         }
 
@@ -143,40 +128,33 @@ namespace Garage_2._0.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             ParkedVehicle parkedVehicle = db.ParkedVehicles.Find(id);
-            var receiptModel = new ReceiptViewModel
-            {
-                Type = parkedVehicle.Type,
-                Color = parkedVehicle.Color,
-                Brand = parkedVehicle.Brand,
-                Model = parkedVehicle.Model,
-                RegNo = parkedVehicle.RegNo,
-                NoOfWheels = parkedVehicle.NoOfWheels,
-                CheckOutTime = DateTime.Now,
-                CheckInTime = parkedVehicle.CheckInTime
-            };
-
-            receiptModel.ParkingPrice = CalculateParkingPrice(receiptModel.CheckInTime, receiptModel.CheckOutTime);
-   
             db.ParkedVehicles.Remove(parkedVehicle);
             db.SaveChanges();
-
-            
-            return View("Receipt", receiptModel);
-            
+            return RedirectToAction("Index");
         }
 
-        private int CalculateParkingPrice(DateTime checkInTime, DateTime checkOutTime)
+
+
+        public ActionResult ListMembers()
         {
-            TimeSpan span = (checkOutTime - checkInTime);
-
-            //Priset blir 1 öre per sekund
-            var ParkingPrice = Convert.ToInt32(span.TotalSeconds * 0.01);
-
-            return ParkingPrice;
-
-
-           
+            return View("ListMembers",db.Members);
         }
+
+        public ActionResult AddMember([Bind(Include = "Id,FirstName,LastName,MemberSignum")] Member member)
+        //public ActionResult AddMember(int id)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Members.Add(member);
+                db.SaveChanges();
+                return RedirectToAction("ListMembers");
+            }
+            return View(); 
+
+        }
+
+
+
 
         protected override void Dispose(bool disposing)
         {
@@ -186,8 +164,6 @@ namespace Garage_2._0.Controllers
             }
             base.Dispose(disposing);
         }
-
-       
-
+        
     }
 }

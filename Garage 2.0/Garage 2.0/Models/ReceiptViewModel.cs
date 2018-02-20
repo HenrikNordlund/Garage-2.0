@@ -9,8 +9,8 @@ namespace Garage_2._0.Models
     public class ReceiptViewModel
     {
         public int Id { get; set; }
-        [Required]
-        public VehicleType Type { get; set; }
+        //[Required]
+        //public VehicleType Type { get; set; }
 
         [Required]
         [Display(Name = "Registration Number")]

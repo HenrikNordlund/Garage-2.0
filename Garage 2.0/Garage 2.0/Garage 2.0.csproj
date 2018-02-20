@@ -148,79 +148,35 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\ParkedVehiclesController.cs" />
     <Compile Include="DataAccessLayer\RegisterContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802091405329_Initial.cs" />
-    <Compile Include="Migrations\201802091405329_Initial.Designer.cs">
-      <DependentUpon>201802091405329_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201802200953019_initial.cs" />
+    <Compile Include="Migrations\201802200953019_initial.Designer.cs">
+      <DependentUpon>201802200953019_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802121028420_New type for Vehicle.cs" />
-    <Compile Include="Migrations\201802121028420_New type for Vehicle.Designer.cs">
-      <DependentUpon>201802121028420_New type for Vehicle.cs</DependentUpon>
+    <Compile Include="Migrations\201802201041251_configuration.cs" />
+    <Compile Include="Migrations\201802201041251_configuration.Designer.cs">
+      <DependentUpon>201802201041251_configuration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802121147505_Change to v.RegNo.cs" />
-    <Compile Include="Migrations\201802121147505_Change to v.RegNo.Designer.cs">
-      <DependentUpon>201802121147505_Change to v.RegNo.cs</DependentUpon>
+    <Compile Include="Migrations\201802201045322_context.cs" />
+    <Compile Include="Migrations\201802201045322_context.Designer.cs">
+      <DependentUpon>201802201045322_context.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802121150427_Change to v.RegNo, attempt2.cs" />
-    <Compile Include="Migrations\201802121150427_Change to v.RegNo, attempt2.Designer.cs">
-      <DependentUpon>201802121150427_Change to v.RegNo, attempt2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802121221298_NotNullRegNo.cs" />
-    <Compile Include="Migrations\201802121221298_NotNullRegNo.Designer.cs">
-      <DependentUpon>201802121221298_NotNullRegNo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802121408586_Add ParkingTime to ParkedVehicle.cs" />
-    <Compile Include="Migrations\201802121408586_Add ParkingTime to ParkedVehicle.Designer.cs">
-      <DependentUpon>201802121408586_Add ParkingTime to ParkedVehicle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802121530113_REmove ParkingTime.cs" />
-    <Compile Include="Migrations\201802121530113_REmove ParkingTime.Designer.cs">
-      <DependentUpon>201802121530113_REmove ParkingTime.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802121509228_akes inputkontroll.cs" />
-    <Compile Include="Migrations\201802121509228_akes inputkontroll.Designer.cs">
-      <DependentUpon>201802121509228_akes inputkontroll.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802130916507_Ny model för kvitto.cs" />
-    <Compile Include="Migrations\201802130916507_Ny model för kvitto.Designer.cs">
-      <DependentUpon>201802130916507_Ny model för kvitto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802131054176_Dmitris fix database.cs" />
-    <Compile Include="Migrations\201802131054176_Dmitris fix database.Designer.cs">
-      <DependentUpon>201802131054176_Dmitris fix database.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802131237059_det sista från Henrik.cs" />
-    <Compile Include="Migrations\201802131237059_det sista från Henrik.Designer.cs">
-      <DependentUpon>201802131237059_det sista från Henrik.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802131310249_fixade avrundningen double.cs" />
-    <Compile Include="Migrations\201802131310249_fixade avrundningen double.Designer.cs">
-      <DependentUpon>201802131310249_fixade avrundningen double.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802131503578_new property checkInTime.cs" />
-    <Compile Include="Migrations\201802131503578_new property checkInTime.Designer.cs">
-      <DependentUpon>201802131503578_new property checkInTime.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802131554014_checkintime.cs" />
-    <Compile Include="Migrations\201802131554014_checkintime.Designer.cs">
-      <DependentUpon>201802131554014_checkintime.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802141036493_better seed.cs" />
-    <Compile Include="Migrations\201802141036493_better seed.Designer.cs">
-      <DependentUpon>201802141036493_better seed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802141047442_full seed.cs" />
-    <Compile Include="Migrations\201802141047442_full seed.Designer.cs">
-      <DependentUpon>201802141047442_full seed.cs</DependentUpon>
+    <Compile Include="Migrations\201802201216526_VehicleTypes.cs" />
+    <Compile Include="Migrations\201802201216526_VehicleTypes.Designer.cs">
+      <DependentUpon>201802201216526_VehicleTypes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\MemberParkedVehicleContext.cs" />
     <Compile Include="Models\ParkedVehicle.cs" />
     <Compile Include="Models\ReceiptViewModel.cs" />
     <Compile Include="Models\ValidateRegNoAttribute.cs" />
+    <Compile Include="Models\VehicleType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -268,6 +224,13 @@
     <Content Include="Views\ParkedVehicles\Index.cshtml" />
     <Content Include="Views\ParkedVehicles\OversightView.cshtml" />
     <Content Include="Views\ParkedVehicles\Receipt.cshtml" />
+    <Content Include="Views\Members\Create.cshtml" />
+    <Content Include="Views\Members\Delete.cshtml" />
+    <Content Include="Views\Members\Details.cshtml" />
+    <Content Include="Views\Members\Edit.cshtml" />
+    <Content Include="Views\Members\Index.cshtml" />
+    <Content Include="Views\ParkedVehicles\ListMembers.cshtml" />
+    <Content Include="Views\ParkedVehicles\AddMember.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -287,53 +250,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802091405329_Initial.resx">
-      <DependentUpon>201802091405329_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802200953019_initial.resx">
+      <DependentUpon>201802200953019_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802121028420_New type for Vehicle.resx">
-      <DependentUpon>201802121028420_New type for Vehicle.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802201041251_configuration.resx">
+      <DependentUpon>201802201041251_configuration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802121147505_Change to v.RegNo.resx">
-      <DependentUpon>201802121147505_Change to v.RegNo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802201045322_context.resx">
+      <DependentUpon>201802201045322_context.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802121150427_Change to v.RegNo, attempt2.resx">
-      <DependentUpon>201802121150427_Change to v.RegNo, attempt2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802121221298_NotNullRegNo.resx">
-      <DependentUpon>201802121221298_NotNullRegNo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802121408586_Add ParkingTime to ParkedVehicle.resx">
-      <DependentUpon>201802121408586_Add ParkingTime to ParkedVehicle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802121530113_REmove ParkingTime.resx">
-      <DependentUpon>201802121530113_REmove ParkingTime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802121509228_akes inputkontroll.resx">
-      <DependentUpon>201802121509228_akes inputkontroll.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802130916507_Ny model för kvitto.resx">
-      <DependentUpon>201802130916507_Ny model för kvitto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802131054176_Dmitris fix database.resx">
-      <DependentUpon>201802131054176_Dmitris fix database.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802131237059_det sista från Henrik.resx">
-      <DependentUpon>201802131237059_det sista från Henrik.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802131310249_fixade avrundningen double.resx">
-      <DependentUpon>201802131310249_fixade avrundningen double.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802131503578_new property checkInTime.resx">
-      <DependentUpon>201802131503578_new property checkInTime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802131554014_checkintime.resx">
-      <DependentUpon>201802131554014_checkintime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802141036493_better seed.resx">
-      <DependentUpon>201802141036493_better seed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802141047442_full seed.resx">
-      <DependentUpon>201802141047442_full seed.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802201216526_VehicleTypes.resx">
+      <DependentUpon>201802201216526_VehicleTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

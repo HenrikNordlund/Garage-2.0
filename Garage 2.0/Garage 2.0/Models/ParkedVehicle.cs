@@ -6,14 +6,10 @@ using System.Web;
 
 namespace Garage_2._0.Models
 {
-    public enum VehicleType { Sedan, Combi, SUV, MC, Vespa };
-
     public class ParkedVehicle
     {
         public int Id { get; set; }
-        [Required]
-        public VehicleType Type { get; set; }
-
+        
         [Required]
         [Display(Name = "Registration Number")]
         [ValidateRegNo(ErrorMessage ="Reg number already exists")]
@@ -30,5 +26,12 @@ namespace Garage_2._0.Models
 
         [Display(Name = "Check in time: ")]
         public DateTime CheckInTime { get; set; }
+
+        public int MemberId { get; set; }
+        public virtual Member Member { get; set; }
+
+        public int VehicleTypeId { get; set; }
+        public virtual VehicleType VehicleType { get; set; }
+
     }
 }
